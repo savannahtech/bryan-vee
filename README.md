@@ -6,7 +6,7 @@ This is the Grants Dashboard Fullstack app.
 
 1.  **Clone the Repository**:
     ```
-    git clone https://github.com/BryanAdamson/grants-dashboard.git
+    git clone https://github.com/savannahtech/bryan-vee.git
     ```
     
 ## Backend
