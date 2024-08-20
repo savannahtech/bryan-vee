@@ -1,0 +1,27 @@
+services:
+  mongo:
+    image: mongo
+    container_name: grants_mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+      MONGO_INITDB_DATABASE: grants_db
+    ports:
+      - '27017:27017'
+    volumes:
+      - mongo_data:/data/db
+
+  backend:
+    build: .
+    container_name: grants_backend
+    ports:
+      - '4000:4000'
+    environment:
+      - MONGO_URI=mongodb://root:example@mongo:27017/grants_db?authSource=admin
+      - PORT=4000
+      - NODE_ENV=production
+    depends_on:
+      - mongo
+
+volumes:
+  mongo_data:

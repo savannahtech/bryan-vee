@@ -1,0 +1,9 @@
+/.idea
+**/node_modules/
+*.tsbuildinfo
+frontend/build/
+frontend/dist/
+backend/dist/
+backend/build/
+frontend/.env
+backend/.env
